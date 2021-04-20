@@ -6,6 +6,10 @@ const morgan = require('morgan');
 
 const app = express();
 const router = require('./router');
+const mongoose = require('mongoose');
+
+// DB Setup
+mongoose.connect('mongodb://localhost:auth', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // App Setup
 app.use(morgan('combined'));
